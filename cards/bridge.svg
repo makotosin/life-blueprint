@@ -1,1 +1,42 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="300" height="360" viewBox="0 0 300 360"><defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#183d58"/><stop offset="1" stop-color="#725275"/></linearGradient></defs><rect width="300" height="360" rx="18" fill="url(#bg)"/><rect x="18" y="18" width="264" height="324" rx="14" fill="none" stroke="#e7c982" stroke-width="4"/><path d="M45 255 Q150 110 255 255" fill="none" stroke="#d9b36c" stroke-width="16"/><path d="M45 255 H255" stroke="#f0d7a0" stroke-width="10"/><text x="150" y="330" text-anchor="middle" font-family="serif" font-size="22" fill="#f5e3b3">橋</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="700" viewBox="0 0 420 700">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#080b12"/>
+    <stop offset="0.55" stop-color="#121022"/>
+    <stop offset="1" stop-color="#020305"/>
+  </linearGradient>
+  <radialGradient id="mist" cx="50%" cy="40%" r="65%">
+    <stop offset="0" stop-color="#5d4a7c" stop-opacity=".55"/>
+    <stop offset=".65" stop-color="#1a1f33" stop-opacity=".18"/>
+    <stop offset="1" stop-color="#000" stop-opacity="0"/>
+  </radialGradient>
+  <filter id="glow">
+    <feGaussianBlur stdDeviation="5" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+</defs>
+<rect width="420" height="700" rx="28" fill="url(#bg)"/>
+<rect x="18" y="18" width="384" height="664" rx="22" fill="none" stroke="#b08a4d" stroke-width="4"/>
+<rect x="34" y="34" width="352" height="632" rx="18" fill="none" stroke="#6f552e" stroke-width="1.5"/>
+<circle cx="210" cy="245" r="180" fill="url(#mist)"/>
+<g fill="none" stroke="#6f552e" stroke-width="1.4" opacity=".8">
+  <path d="M54 75 H366 M54 625 H366"/>
+  <path d="M72 52 V648 M348 52 V648"/>
+  <path d="M44 110 C90 75 135 68 180 80"/>
+  <path d="M376 110 C330 75 285 68 240 80"/>
+</g>
+<circle cx="85" cy="125" r="3" fill="#d6c482" opacity=".85"/><circle cx="130" cy="90" r="2" fill="#d6c482" opacity=".85"/><circle cx="285" cy="105" r="3" fill="#d6c482" opacity=".85"/><circle cx="325" cy="155" r="2" fill="#d6c482" opacity=".85"/><circle cx="95" cy="300" r="2" fill="#d6c482" opacity=".85"/><circle cx="335" cy="320" r="3" fill="#d6c482" opacity=".85"/><circle cx="150" cy="175" r="2" fill="#d6c482" opacity=".85"/><circle cx="270" cy="210" r="2" fill="#d6c482" opacity=".85"/>
+<g filter="url(#glow)">
+  <path d="M65 430 Q210 180 355 430" fill="none" stroke="#d7b56d" stroke-width="12"/>
+  <path d="M65 430 H355" stroke="#8f243c" stroke-width="6"/>
+  <path d="M105 390 V475 M145 315 V475 M210 250 V475 M275 315 V475 M315 390 V475" stroke="#6d5481" stroke-width="5"/>
+  <path d="M210 185 V135 M180 155 L210 135 L240 155" fill="none" stroke="#d7b56d" stroke-width="4"/>
+  <circle cx="210" cy="125" r="16" fill="#8f243c"/>
+</g>
+
+<g font-family="serif" text-anchor="middle">
+  <text x="210" y="565" font-size="42" fill="#d7b56d">橋</text>
+  <text x="210" y="600" font-size="17" letter-spacing="4" fill="#8b75a6">THE BRIDGE</text>
+  <text x="210" y="645" font-size="16" fill="#806b43">ARCANA III</text>
+</g>
+</svg>

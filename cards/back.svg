@@ -27,17 +27,17 @@
 </g>
 <circle cx="85" cy="125" r="3" fill="#d6c482" opacity=".85"/><circle cx="130" cy="90" r="2" fill="#d6c482" opacity=".85"/><circle cx="285" cy="105" r="3" fill="#d6c482" opacity=".85"/><circle cx="325" cy="155" r="2" fill="#d6c482" opacity=".85"/><circle cx="95" cy="300" r="2" fill="#d6c482" opacity=".85"/><circle cx="335" cy="320" r="3" fill="#d6c482" opacity=".85"/><circle cx="150" cy="175" r="2" fill="#d6c482" opacity=".85"/><circle cx="270" cy="210" r="2" fill="#d6c482" opacity=".85"/>
 <g filter="url(#glow)">
-  <circle cx="210" cy="330" r="80" fill="#b06b3c" opacity=".95"/>
-  <path d="M80 350 H340" stroke="#d7b56d" stroke-width="8"/>
-  <path d="M210 185 V110 M140 215 L95 165 M280 215 L325 165" stroke="#d7b56d" stroke-width="6"/>
-  <path d="M75 420 Q135 370 195 420 T315 420" fill="none" stroke="#4d607b" stroke-width="18"/>
-  <path d="M55 455 Q125 400 195 455 T365 455" fill="none" stroke="#272f43" stroke-width="24"/>
-  <path d="M210 330 L225 370 L210 410 L195 370Z" fill="#8f243c"/>
+  <circle cx="210" cy="275" r="105" fill="none" stroke="#9a6bb5" stroke-width="3"/>
+  <circle cx="210" cy="275" r="72" fill="none" stroke="#b08a4d" stroke-width="2"/>
+  <path d="M210 145 L235 245 L335 275 L235 305 L210 405 L185 305 L85 275 L185 245 Z" fill="none" stroke="#d7b56d" stroke-width="4"/>
+  <circle cx="210" cy="275" r="18" fill="#8f243c"/>
+  <path d="M145 275 Q210 220 275 275 Q210 330 145 275Z" fill="none" stroke="#d8c4e3" stroke-width="4"/>
+  <circle cx="210" cy="275" r="8" fill="#d8c4e3"/>
 </g>
 
 <g font-family="serif" text-anchor="middle">
-  <text x="210" y="565" font-size="42" fill="#d7b56d">夜明け</text>
-  <text x="210" y="600" font-size="17" letter-spacing="4" fill="#8b75a6">THE DAWN</text>
-  <text x="210" y="645" font-size="16" fill="#806b43">ARCANA V</text>
+  <text x="210" y="565" font-size="42" fill="#d7b56d">人生再点火</text>
+  <text x="210" y="600" font-size="17" letter-spacing="4" fill="#8b75a6">THE HIDDEN BLUEPRINT</text>
+  <text x="210" y="645" font-size="16" fill="#806b43">ARCANA 0</text>
 </g>
 </svg>

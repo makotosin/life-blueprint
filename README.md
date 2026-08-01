@@ -1,11 +1,16 @@
-# 人生再点火設計インタビュー Ver1.3
+# 神秘カード差し替えセット Ver1.4
 
-- 22項目は維持
-- 人物像→隠れた欲求→現在の仮説→設計結論の推論を追加
-- 暗示のカード8枚をオリジナルSVGで表示
-- カードを裏返す演出を追加
-- GitHubへは全ファイルと cards フォルダを上書きアップロード
+内容：
+- cards/back.svg
+- cards/lamp.svg
+- cards/compass.svg
+- cards/bridge.svg
+- cards/seed.svg
+- cards/dawn.svg
+- cards/star.svg
+- cards/traveler.svg
+- cards/blank.svg
+- cards.js
 
-
-## Ver1.3
-暗示のカードを外部SVGからHTML/CSS描画へ変更。cardsフォルダ不要。青焼き設計図風の8図柄をカード内部に直接描画します。
+GitHubでは `cards` フォルダをそのままアップロードし、既存の `cards.js` を上書きしてください。
+ファイル名はプログラム参照と一致する英字名で統一しています。
