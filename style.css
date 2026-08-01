@@ -48,3 +48,9 @@
 .tarotFront h3{margin:2px 0 5px;font-size:1.48rem;line-height:1.25}
 .tarotFront>p:last-of-type{margin:0;max-height:none;font-size:.82rem;line-height:1.55;overflow:visible}
 @media(max-width:480px){.tarotCard{width:238px;height:438px}.mystic-card-art{height:250px;flex-basis:250px}}
+
+/* Ver1.4.2 card display hard fix */
+.tarotCard{height:560px!important;}
+.tarotFront{overflow:hidden!important;padding-bottom:22px!important;}
+.tarotFront #cardMessage{display:block!important;max-height:72px!important;overflow:hidden!important;line-height:1.55!important;margin:8px 14px 0!important;}
+.tarotFront #cardNo{min-height:1.2em!important;}
