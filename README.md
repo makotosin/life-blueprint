@@ -1,16 +1,4 @@
-# 神秘カード差し替えセット Ver1.4
+# 人生再点火設計インタビュー Ver1.4
 
-内容：
-- cards/back.svg
-- cards/lamp.svg
-- cards/compass.svg
-- cards/bridge.svg
-- cards/seed.svg
-- cards/dawn.svg
-- cards/star.svg
-- cards/traveler.svg
-- cards/blank.svg
-- cards.js
-
-GitHubでは `cards` フォルダをそのままアップロードし、既存の `cards.js` を上書きしてください。
-ファイル名はプログラム参照と一致する英字名で統一しています。
+カード画像ファイルを廃止し、9枚分（裏面1＋表面8）の図柄をHTML/CSSへ直接埋め込んだ完全版です。
+GitHubへは、このZIP内の7ファイルをすべて上書きアップロードしてください。cardsフォルダは不要です。
