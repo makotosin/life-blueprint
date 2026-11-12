@@ -1,116 +1,18 @@
-<!doctype html>
-<html lang="ja">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#080713" />
-  <meta name="description" content="スキ3000突破記念・人生再点火タロット。無料で楽しめる大アルカナ22枚のオリジナル占いです。" />
-  <title>人生再点火タロット</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=5.1" />
-</head>
-<body>
-  <canvas id="stars" aria-hidden="true"></canvas>
-  <div class="mist mist-a"></div><div class="mist mist-b"></div>
-  <div id="atmosphere" class="atmosphere" aria-hidden="true">
-    <div class="veil veil-a"></div><div class="veil veil-b"></div>
-    <div id="particles" class="particles"></div>
-    <div class="vignette"></div>
-  </div>
-
-  <main class="app-shell">
-    <section id="home" class="screen active hero" aria-labelledby="main-title">
-      <div class="sigil" aria-hidden="true">✦</div>
-      <p class="eyebrow">スキ3000突破記念・読者無料サービス</p>
-      <h1 id="main-title">人生再点火<br><span>TAROT</span></h1>
-      <p class="lead">今、心に浮かぶことを一つだけ。<br>二十二枚のカードが、まだ言葉にならない兆しを映します。</p>
-      <button class="primary" data-go="modes">カードをひらく</button>
-      <p class="tiny">この占いは娯楽を目的としたものです。重要な判断は、現実の情報も大切にしてください。</p>
-    </section>
-
-    <section id="modes" class="screen" aria-labelledby="mode-title">
-      <button class="back" data-go="home" aria-label="戻る">←</button>
-      <p class="eyebrow">CHOOSE A READING</p>
-      <h2 id="mode-title">何を占いますか</h2>
-      <div class="mode-grid">
-        <button class="mode-card" data-mode="one"><b>今日の一枚</b><span>今日の流れと小さな指針</span></button>
-        <button class="mode-card" data-mode="answer"><b>迷いへの答え</b><span>いま抱える問いへの示唆</span></button>
-        <button class="mode-card" data-mode="three"><b>過去・現在・未来</b><span>三枚で物語の流れを見る</span></button>
-        <button class="mode-card" data-mode="reignite"><b>人生再点火の兆し</b><span>次の一歩に必要な火種</span></button>
-      </div>
-    </section>
-
-    <section id="question" class="screen" aria-labelledby="question-title">
-      <button class="back" data-go="modes" aria-label="戻る">←</button>
-      <p class="eyebrow" id="mode-label">YOUR QUESTION</p>
-      <h2 id="question-title">心の中で問いを整えてください</h2>
-      <p class="lead compact">言葉にしても、胸にしまったままでもかまいません。</p>
-      <textarea id="question-input" maxlength="120" placeholder="例：これから始めたいことについて、何を大切にすればよい？"></textarea>
-      <p class="counter"><span id="count">0</span>/120</p>
-      <button class="primary" id="begin-reading">カードを並べる</button>
-    </section>
-
-    <section id="daily-warning" class="screen omen-screen" aria-labelledby="daily-warning-title">
-      <p class="eyebrow">A SECOND QUESTION</p>
-      <div class="omen-sigil" aria-hidden="true">☾</div>
-      <h2 id="daily-warning-title">今日は、すでに一度カードに問いかけています</h2>
-      <p class="lead compact">同じ日に何度も答えを求めると、最初に受け取った兆しを見失うことがあります。</p>
-      <p class="omen-copy">それでも、もう一度だけ問いかけますか？</p>
-      <div class="actions omen-actions">
-        <button class="primary danger-soft" id="warning-continue">それでも占う</button>
-        <button class="secondary" id="warning-stop">今日はやめる</button>
-      </div>
-    </section>
-
-    <section id="daily-silence" class="screen omen-screen silence-screen" aria-labelledby="daily-silence-title">
-      <p class="eyebrow">THE CARDS REMAIN SILENT</p>
-      <div class="silent-card" aria-hidden="true"><img src="images/card-back.svg" alt=""></div>
-      <h2 id="daily-silence-title">カードは、今日はもう答えません</h2>
-      <p class="omen-copy strong">これ以上、同じ日に答えを求めてはいけません。</p>
-      <p class="lead compact">今日のカードは沈黙を選びました。最初に受け取った言葉を、しばらくそのまま置いてみてください。</p>
-      <button class="secondary" data-go="home">入口へ戻る</button>
-    </section>
-
-    <section id="daily-closed" class="screen omen-screen closed-screen" aria-labelledby="daily-closed-title">
-      <p class="eyebrow">THE GATE IS CLOSED</p>
-      <div class="omen-sigil closed" aria-hidden="true">✦</div>
-      <h2 id="daily-closed-title">今日はもう、カードは答えません</h2>
-      <p class="lead compact">また日付が変わってから、静かな気持ちで訪れてください。</p>
-      <button class="secondary" data-go="home">入口へ戻る</button>
-    </section>
-
-    <section id="draw" class="screen" aria-labelledby="draw-title">
-      <p class="eyebrow">LISTEN TO YOUR INTUITION</p>
-      <h2 id="draw-title">惹かれるカードを選んでください</h2>
-      <p class="lead compact" id="draw-help">一枚選びます</p>
-      <div id="deck" class="deck" role="group" aria-label="伏せられたタロットカード"></div>
-      <p class="selection-status" id="selection-status"></p>
-    </section>
-
-    <section id="reveal" class="screen" aria-labelledby="reveal-title">
-      <p class="eyebrow">THE CARDS HAVE SPOKEN</p>
-      <h2 id="reveal-title">カードがひらきました</h2>
-      <div id="revealed-cards" class="revealed-cards"></div>
-      <button class="primary" id="show-result">言葉を受け取る</button>
-    </section>
-
-    <section id="result" class="screen result-screen" aria-labelledby="result-title">
-      <p class="eyebrow">YOUR READING</p>
-      <h2 id="result-title">今回のメッセージ</h2>
-      <p class="question-echo" id="question-echo"></p>
-      <div id="result-body"></div>
-      <div class="actions">
-        <button class="primary" id="save-result">結果を画像保存</button>
-        <button class="secondary" id="again">もう一度占う</button>
-      </div>
-      <p class="share-note">結果画像には、入力した質問文は表示されません。</p>
-    </section>
-  </main>
-
-  <footer>© 人生再点火タロット <span class="version-badge">Effects v5.3</span></footer>
-  <script src="data/cards.js?v=5.3"></script>
-  <script src="app.js?v=5.3"></script>
-</body>
-</html>
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>CAN YOU BECOME AN ANGEL? | WEIRD EVOLUTION!</title><link rel="stylesheet" href="style.css"></head><body>
+<div class="titleScreen" id="titleScreen" role="dialog" aria-modal="true" aria-labelledby="titleMain">
+ <div class="titleInner">
+  <div class="titleTop">WEIRD EVOLUTION! <span>•</span> THE EXPERIMENT BEGINS</div>
+  <h1 id="titleMain">CAN YOU<br><em>BECOME AN ANGEL?</em></h1>
+  <p class="titleJP">天使か、超人類か。<br>その進化に、たどり着けるか？</p>
+  <div class="titleFigures"><div class="titleFigure titleHuman"><img src="assets/evolutions/rare_transhuman.png" alt="超人類"><span>TRANSHUMAN</span></div><div class="titleFigure titleAngel"><img src="assets/evolutions/rare_angel.png" alt="天使"><span>ANGEL</span></div></div>
+  <p class="titleTagline">角度を決め、跳び、試薬を集めろ。<br>どんな姿へ進化するかは、あなた次第。</p>
+  <button type="button" id="startFromTitle" class="titleStart">START EXPERIMENT <span>実験を始める</span></button>
+  <p class="titleNote">4つの原種・4つの進化属性・2つの超レア最終形態</p>
+ </div>
+</div>
+<div class="shell"><header><div><span class="micro">WEIRD EVOLUTION! / LAUNCH LAB</span><h1>LAUNCH <span>&</span> LAB</h1></div><div class="stats"><div><small>LEVEL</small><strong id="level">LEVEL 1</strong></div><div><small>SCORE</small><strong id="score">0</strong></div><div><small>COMBO</small><strong id="combo">×1</strong></div><div><small>TIME</small><strong id="playtime">00:00</strong></div><div><small>LIFE</small><strong id="lives">♥ ♥ ♥ ♥ ♥</strong></div></div></header>
+<main><section class="arena panel"><div class="arenaTop"><div><span class="micro">JUMP ZONE — REAGENT PLATFORMS</span><div class="help">序盤は広い静止足場。上達すると移動足場や風が登場。アイテムは取るまで残ります！ ① 角度を選ぶ → ② <b>ANGLE決定</b> → ③ ゲージでパワーを決めて発射</div></div><span class="state" id="state">READY</span></div><canvas id="game" width="960" height="530" aria-label="跳躍アクションゲーム"></canvas><div class="playBar"><div class="angleControl"><label for="angle">① ANGLE — 自分で設定 <output id="angleTxt">48°</output></label><div class="angleStep"><button type="button" id="angleDown" class="nudge" aria-label="角度を5度下げる">−5°</button><input id="angle" type="range" min="18" max="76" step="1" value="48" aria-label="発射角度"><button type="button" id="angleUp" class="nudge" aria-label="角度を5度上げる">+5°</button></div><button type="button" id="lockAngle" class="angleLock">ANGLE決定：48°</button><small id="angleHint">角度を自由に設定し、決定してください</small></div><div class="powerControl"><div class="powerHead"><span>② POWER — タイミング</span><b id="powerTxt">65%</b></div><div class="meter"><div class="ideal"></div><div id="powerFill"></div><div class="marker" id="powerMarker"></div></div><small>角度決定後にゲージが動きます</small></div><button id="launch" class="launch" disabled>③ LAUNCH!<span>角度決定後に発射</span></button></div><div class="difficulty" id="activeEffect">イレギュラー効果：なし</div><div class="difficulty">足場の動き：<strong id="movement">静止</strong>　／　6回成功するごとにレベルアップ</div><div class="log" id="message" aria-live="polite">まず角度を自分で設定して「ANGLE決定」を押してください。</div></section>
+<aside class="lab panel"><div class="labHeading"><span class="micro">LABORATORY / REWARDS</span><h2>進化実験室</h2><div class="micro" id="selectedSpecies">SPECIMEN · REPTILOID</div></div><div class="specimen phase-0" id="specimenFrame"><div class="specimenStage" id="stageLabel">ORIGIN — 白黒</div><img id="specimen" src="assets/evolutions/reptiloid_base.png" alt="進化した生物"><div id="evoGlow" class="evoGlow"></div></div><div class="attributeLine" id="evoAttribute">進化系統：まだ未確定</div><div class="attributeLine" id="evoGrade">最終グレードは進化時に公開</div><div class="stageTrack"><span>進化ポイント</span><b id="evoPoints">0 / 45</b></div><div class="evoMeter"><div id="evoFill"></div></div><div class="reagents" id="reagents"></div><div class="labInfo" id="labInfo">着地して試薬を回収。中間進化は最多試薬の属性で決まり、最終進化ではその属性の完成形態を公開します。</div><button id="restart" class="reset">原種を選び直す</button></aside></main>
+<footer>角度を手動で決め、パワーゲージで発射。試薬を集め、進化を目指そう。</footer></div>
+<div id="speciesPicker" class="speciesPicker hidden"><div class="speciesPanel"><div class="micro">LABORATORY / SPECIES SELECTION</div><h2>原種を選択</h2><p>4種類の生物から1体を選び、試薬を集めよう。</p><div id="speciesCards" class="speciesCards"></div></div></div><div id="overlay" class="overlay hidden"><div class="modal"><div class="micro" id="overlayKicker">EXPERIMENT</div><h2 id="overlayTitle"></h2><p id="overlayText"></p><div id="overlayArt" class="overlayArt hidden"><div id="overlayArtFrame" class="overlayArtFrame"><img id="overlayCreature" alt="進化した生物"></div></div><div id="overlayExtra"></div><button id="overlayBtn">続ける</button></div></div>
+<script src="game.js"></script></body></html>
