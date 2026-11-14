@@ -88,3 +88,15 @@
 .titleStart:focus-visible{outline:3px solid white;outline-offset:4px}
 .titleNote{font-size:11px;color:#aeb6bd;margin:13px 0 0}
 @media(max-width:480px){.titleScreen{padding:12px}.titleTop{font-size:9px;letter-spacing:.11em}.titleJP{font-size:14px}.titleFigure img{height:clamp(180px,30vh,240px)}.titleTagline{font-size:11px}.titleStart{min-height:52px}.titleNote{font-size:10px}}
+
+/* CrazyGames Basic Launch v0.22: readable progress status and portrait spacing. */
+.saveHint{font-size:11px;color:#becbc5;line-height:1.5;margin:14px 0 0}.titleSaveNote{font-size:11px;color:#bfd2d1;margin:9px 0 0}.speciesCard:focus-visible,.angleLock:focus-visible,#launch:focus-visible{outline:3px solid #f2ca86;outline-offset:3px}
+
+/* v0.23: single-click entry with direct species selection. */
+.titleSubtitle{font-size:clamp(15px,2.4vw,21px);line-height:1.5;color:#eee4d6;margin:8px 0 4px}
+.titleLaunch{margin:12px auto 0;max-width:700px}.titleChoiceLabel{color:#f2d6a3;font-size:12px;letter-spacing:.11em;font-weight:800;margin:6px 0}
+.titleSpeciesCards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px}.titleSpeciesButton{display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:0;gap:4px;border:1px solid #827b6b;border-radius:9px;background:#24323e;color:#f9ebcf;padding:8px 4px;cursor:pointer;min-height:108px;font-size:11px;font-weight:850;letter-spacing:.035em;touch-action:manipulation}.titleSpeciesButton:hover,.titleSpeciesButton:focus-visible{background:#3d4e59;outline:2px solid #f2ca86;outline-offset:2px}.titleSpeciesButton img{height:72px;max-width:94%;object-fit:contain;display:block}.titleSpeciesButton small{font-size:10px;color:#cad7d7;font-weight:500}.titleStart.hidden{display:none}.titleStart{margin:10px auto 0}
+@media(max-width:480px){.titleSpeciesCards{gap:5px}.titleSpeciesButton{padding:5px 2px;min-height:78px;font-size:9px}.titleSpeciesButton img{height:50px}.titleSpeciesButton small{font-size:9px}.titleChoiceLabel{font-size:10px}.titleSubtitle{font-size:14px}.titleFigure img{height:clamp(100px,21vh,185px)}}
+
+/* v0.24 audio controls: accessible and unobtrusive. */
+.titleAudio,.gameAudio{display:flex;gap:8px;justify-content:center;align-items:center;flex-wrap:wrap}.titleAudio{margin-top:10px}.gameAudio{margin-left:auto}.soundToggle{font:700 11px system-ui,sans-serif;letter-spacing:.04em;min-height:34px;padding:7px 11px;border-radius:6px;border:1px solid #90a6aa;background:#1d303d;color:#f5ecd5;cursor:pointer;touch-action:manipulation}.soundToggle[aria-pressed="false"]{background:#30373a;color:#c1c9ca;border-color:#5f747b}.soundToggle:focus-visible{outline:3px solid #f5cc7e;outline-offset:2px}footer{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap} @media(max-width:600px){footer{justify-content:center;text-align:center}.gameAudio{margin:0 auto}}
